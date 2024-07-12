@@ -1,4 +1,4 @@
-# Desafío 2 - Alura Oracle API Consumo de Literatura
+# Challenge - Alura Oracle API Consumo de Literatura
 
 ## 💡 SOBRE EL PROYECTO 💡
 

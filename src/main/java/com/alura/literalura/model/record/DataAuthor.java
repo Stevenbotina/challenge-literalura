@@ -1,8 +1,10 @@
 package com.alura.literalura.model.record;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 public record DataAuthor(
-        String name,
-        Integer birthYear,
-        Integer deathYear){
+        @JsonAlias("name") String name,
+        @JsonAlias("birth_year") Integer birthYear,
+        @JsonAlias("death_year") Integer deathYear){
 
 }

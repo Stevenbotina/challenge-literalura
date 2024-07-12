@@ -1,6 +1,13 @@
 package com.alura.literalura.model.record;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public record DataSearch(Integer account, List<DataBook> books) {
+import java.util.List;
+@JsonIgnoreProperties(ignoreUnknown = true)
+
+public record DataSearch(
+        @JsonAlias("count") Integer account,
+        @JsonAlias("results") List<DataBook> books) {
+
 }

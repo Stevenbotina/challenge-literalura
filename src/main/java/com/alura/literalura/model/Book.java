@@ -2,22 +2,28 @@ package com.alura.literalura.model;
 
 import com.alura.literalura.model.record.DataBook;
 import com.alura.literalura.model.record.Language;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "books")
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @ManyToOne
     private Author author;
+    @Enumerated(EnumType.STRING)
     private Language language;
     private Integer downloadNumber;
-    private String image;
 
     public Book() {
     }
 
     public Book(DataBook dataBook) {
         this.title = dataBook.title();
-        this.language = Language.fromString(dataBook.Language().toString().split(",")[0].trim());
+        this.language = Language.fromString(dataBook.language().toString().split(",")[0].trim());
         this.downloadNumber = dataBook.downloadNumber();
     }
 
